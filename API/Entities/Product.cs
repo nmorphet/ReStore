@@ -1,7 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+/*The class is used on the backend to define the structure of the products table in the
+ database and provide additional functionality, while the interface is used on the frontend 
+ to specify the structure of the data object that is being sent or received from the backend API. */
 
 namespace API.Entities //entity classes need to be public to be able to get and set
 {

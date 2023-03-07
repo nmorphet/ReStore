@@ -21,6 +21,8 @@ builder.Services.AddDbContext<StoreContext>(opt =>      //lambda expression, pas
                                                                                     appsettingsDevelopment.json*/
 });
 
+builder.Services.AddCors();
+
 
 var app = builder.Build();
 
@@ -39,6 +41,10 @@ if (app.Environment.IsDevelopment()) //check to see if running in dev mode
 }
 
 app.UseHttpsRedirection(); /*if a request does come in over http, can be redirected to https*/
+app.UseCors(opt =>
+{
+    opt.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:3000");
+});
 
 app.UseAuthorization(); 
 

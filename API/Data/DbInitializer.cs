@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using API.Entities;
 // this code will run at the start of app, idea is to delete db and restart and seed with seed data
 namespace API.Data
