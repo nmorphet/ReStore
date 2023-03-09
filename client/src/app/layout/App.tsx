@@ -1,8 +1,8 @@
-import { Container, CssBaseline, Typography } from "@mui/material";
+import { Container, CssBaseline } from "@mui/material";
 import createTheme from "@mui/material/styles/createTheme";
 import ThemeProvider from "@mui/material/styles/ThemeProvider";
 import { useState } from "react";
-import Catalog from "../../features/catalog/catalog";
+import { Outlet } from "react-router-dom";
 import Header from "./Header";
 
 /* the createTheme() function is called to create a custom theme object for the application. This function is a part of the Material UI 
@@ -42,17 +42,17 @@ function App() {
     setDarkMode(!darkMode);
   }
 
-   {/*header is passed two props, darkMode={darkMode} sets initial state 
+    /*header is passed two props, darkMode={darkMode} sets initial state 
       of header to either light or dark depending on the value of darkMode.
       handleThemeChange={handleThemeChange} passes down the handleThemeChange
       function as a prop to the <Header> component, so that the header update
-      the 'darkMode' state variable when the user toggles the dark mode switch */}
+      the 'darkMode' state variable when the user toggles the dark mode switch */
   return (
     <ThemeProvider theme={theme}> 
     <CssBaseline />  {/* In React, the <CssBaseline /> component is used to apply a consistent base style to the entire application. */}
     <Header darkMode={darkMode} handleThemeChange={handleThemeChange} />
     <Container>
-        <Catalog/>
+        <Outlet />
     </Container>
     </ThemeProvider>
   );
