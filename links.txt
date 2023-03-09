@@ -3,3 +3,5 @@ https://mui.com/material-ui/getting-started/overview/
 https://reactrouter.com/en/main
 
 http://localhost:5000/swagger/index.html
+
+https://learn.microsoft.com/en-us/aspnet/core/fundamentals/middleware/?view=aspnetcore-7.0

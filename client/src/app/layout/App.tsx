@@ -3,7 +3,9 @@ import createTheme from "@mui/material/styles/createTheme";
 import ThemeProvider from "@mui/material/styles/ThemeProvider";
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import Header from "./Header";
+import'react-toastify/dist/ReactToastify.css';
 
 /* the createTheme() function is called to create a custom theme object for the application. This function is a part of the Material UI 
 library for React and is used to generate a theme object that can be applied to the components of an application.
@@ -49,6 +51,7 @@ function App() {
       the 'darkMode' state variable when the user toggles the dark mode switch */
   return (
     <ThemeProvider theme={theme}> 
+    <ToastContainer position="bottom-right" hideProgressBar theme="colored"/>
     <CssBaseline />  {/* In React, the <CssBaseline /> component is used to apply a consistent base style to the entire application. */}
     <Header darkMode={darkMode} handleThemeChange={handleThemeChange} />
     <Container>

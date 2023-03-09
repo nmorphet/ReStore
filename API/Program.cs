@@ -1,9 +1,7 @@
 using API.Data;
-using Microsoft.AspNetCore.Builder;
+using API.Middleware;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,6 +32,9 @@ what is going between request
 being received and response
 being sent out is referred
 to as HTTP request pipeline*/
+
+app.UseMiddleware<ExceptionMiddleware>();
+
 if (app.Environment.IsDevelopment()) //check to see if running in dev mode
 {
     app.UseSwagger(); //if so, make swagger available with this middleware
