@@ -14,5 +14,7 @@ namespace API.Data
         }
         //for each of our entities we need to create a DbSet, products is the name of the table we are going to create.
         public DbSet<Product> Products { get; set; } //defines DbSet, represents product table with properties columns
+
+        public DbSet<Basket> Baskets { get; set; }
     }
 }

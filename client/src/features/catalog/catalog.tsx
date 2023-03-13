@@ -4,9 +4,6 @@ import LoadingComponent from "../../app/layout/LoadingComponent";
 import { Product } from "../../app/layout/models/product";
 import ProductList from "./ProductList";
 
-/*destructuring{products, addProduct}, specifying properties interested in from an object 
-and naming them directly to avoid needing to name object.name.thing, products can be
-specified directly and used directly */
 export default function Catalog() {  
     const [products, setProducts] = useState<Product[]>([]);
     const [loading, setLoading] = useState(true);
@@ -27,3 +24,16 @@ export default function Catalog() {
          </Fragment>
     )
 }
+
+/*This code defines a React functional component named Catalog.
+
+It imports and uses a few other components and modules from the project, such as Fragment, useEffect, useState, LoadingComponent, Product, and ProductList.
+
+The component has two state variables: products and loading, which are both initialized with default values.
+
+In the useEffect hook, an API request is sent using the agent module to get a list of products from the server. When the response is returned, the list of 
+products is saved in the products state variable using the setProducts function. If there is an error, the error is logged to the console. 
+The finally block is executed regardless of whether the API request succeeds or fails, and it sets the loading state variable to false.
+
+The component renders a LoadingComponent if the loading state variable is true. Otherwise, it renders a ProductList component with the products array passed 
+as a prop */
